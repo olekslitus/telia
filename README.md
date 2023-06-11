@@ -74,3 +74,6 @@ handler Angle {
 ```
 
 ```
+
+# Credit
+Telia was inspired by ZIO and Jolie programming language.
