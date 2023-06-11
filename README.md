@@ -5,7 +5,11 @@ The Telia programming language
 
 ```
 module System
-# file:system.telia
+.
+.
+.
+
+# system.telia
 ```
 
 
@@ -22,13 +26,51 @@ interface Console {
 ### Defining
 ```
 local service SimpleConsole for Console {
-  def print[D](data: D) { ... }
+  print[D](data: D) { ... }
+}
+
+local service AppleCounter {
+  def appleCount() 
 }
 ```
 
 ### Composable
 ```
-interface
+module CarExample
 
-local service 
+interface Car {
+  drive(speed: Int) -> Nothing
+}
+
+local service PrintingCar for Car {
+  use print from System>Console
+
+  drive(speed: Int) : Nothing {
+    print("Now driving at speed: /{speed}")
+  }
+}
+
+local service DrivingCar for Car {
+  
+}
+```
+
+
+## Data
+```
+module Math
+
+data Angle {
+  radians -> Int
+}
+
+handler Angle {
+  degress -> Int 
+}
+
+```
+
+## Handlers
+```
+
 ```
